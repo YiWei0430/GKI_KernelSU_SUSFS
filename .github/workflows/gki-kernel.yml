@@ -339,7 +339,7 @@ jobs:
 
           # Remove check_defconfig
           sed -i 's/check_defconfig//' ./common/build.config.gki
-       
+          sed -i '$s|echo "\$res"|echo "\q0430o依"|' ./common/scripts/setlocalversion
       - name: Config Kernel Name
         run: |
           echo "Changing to configuration directory: $CONFIG..."
